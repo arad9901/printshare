@@ -80,71 +80,111 @@ const PRINTER_BRANDS = {
   },
 };
 
-// ---- ערים ישראליות — רשימה מקיפה ----
+// ---- ערים ישראליות — רשימה מלאה (ערים, מושבים, קיבוצים, כפרים) ----
 const ISRAELI_CITIES = [
-  // א
-  "אבו גוש","אבן יהודה","אופקים","אור יהודה","אור עקיבא","אורנית","אחיהוד","אחוזת ברק",
-  "אילת","אילניה","אכסאל","אל-עזריה","אלעד","אלפי מנשה","אם אל-פחם","אמירים",
-  "אפרת","אראלה","אריאל","ארסוף","אשדוד","אשקלון","אשרת",
-  // ב
-  "באקה אל-גרביה","באר יעקב","באר שבע","בוסתן הגליל","בועינה-נוג'ידאת",
-  "ביתר עילית","בית אל","בית אריה","בית דגן","בית ג'ן","בית חנינא","בית יצחק",
-  "בית לחם הגלילית","בית שאן","בית שמש","בני ברק","בני עי\"ש","בנימינה",
-  "בסמת טבעון","בענה","בצרה","בקה אל-גרבייה","בר יוחאי","ברקן","ברקת","בת ים","בת עין",
-  // ג
-  "גבע","גבעון החדשה","גבעת זאב","גבעת שמואל","גבעתיים","גדרה","גולני","גן יבנה",
-  "גני תקווה","גשר הזיו",
-  // ד
-  "דאלית אל-כרמל","דבורייה","דימונה","דליה","דלתון",
-  // ה
-  "הוד השרון","הרצליה","הר אדר","הר גילה",
-  // ו
-  "ורד יריחו",
-  // ז
-  "זכרון יעקב","זמר","זרזיר",
-  // ח
-  "חבצלת השרון","חדרה","חולון","חיפה","חצור הגלילית","חצרים",
-  // ט
-  "טבריה","טורעאן","טייבה","טייבה (בעמק)","טירה","טירת יהודה","טירת כרמל","טמרה",
-  // י
-  "יבנה","יגור","יהוד-מונוסון","יודפת","יוקנעם עילית","יכיני","ינוח","ירושלים","ירכא","ישכר",
-  // כ
-  "כאבול","כאוכב אבו אל-היג'א","כוכב יאיר","כוכב הצפון","כישור","כסרא-סמיע",
-  "כפר אדומים","כפר ביאליק","כפר בלום","כפר גלעדי","כפר הנשיא","כפר הרי\"ף",
-  "כפר חב\"ד","כפר חרוב","כפר יהושע","כפר יונה","כפר יסיף","כפר כמא","כפר כנא",
-  "כפר מנדא","כפר מצר","כפר נהר הירדן","כפר סבא","כפר עזה","כפר ענן","כפר פינס",
-  "כפר קאסם","כפר קרע","כפר ראש הנקרה","כפר רות","כפר שמאי","כפר תבור","כרמיאל",
-  // ל
-  "לוד","לוחמי הגטאות","לימן","לקיה",
-  // מ
-  "מג'ד אל-כרום","מגאר","מגדל","מגדל העמק","מגדל שמס","מגדלים","מודיעין מכבים רעות",
-  "מודיעין עילית","מוצא עילית","מזכרת בתיה","מחניים","מטולה","מיתר","מכמנים",
-  "מעלות-תרשיחא","מעלה אדומים","מעלה גלבוע","מעלה עירון","מפלסים","מצפה רמון","מצפה שלם",
-  "מרגליות","משגב עם",
-  // נ
-  "נהריה","נוף הגליל","נועם","נחשולים","ניצן","ניר דוד","ניר עם","ניר עציון",
-  "נס ציונה","נשר","נתיבות","נתניה",
-  // ס
-  "סאג'ור","סביון","סח'נין","סלמה","סנסנה","ספיר",
-  // ע
-  "עכו","עמנואל","עפולה","עראבה","עראמשה","ערד","עשרת",
-  // פ
-  "פוריה","פורת","פרדס חנה-כרכור","פרדסייה","פתח תקוה",
-  // צ
-  "צביה","צובה","צור הדסה","צור יגאל","צור נתן","צפת","צרעה",
-  // ק
-  "קדומים","קדימה-צורן","קדמת צבי","קטורה","קיסריה","קלנסווה","קצרין",
-  "קריית אונו","קריית אתא","קריית ביאליק","קריית גת","קריית טבעון",
-  "קריית מוצקין","קריית מלאכי","קריית עקרון","קריית ים","קריית שמונה",
-  // ר
-  "ראש העין","ראש פינה","ראשון לציון","רהט","רוחמה","רחובות","רינתיה",
-  "רכסים","רמלה","רמת גן","רמת השרון","רמת ישי","רמת מגשימים","רמת רחל",
-  "רעננה","רקפת",
-  // ש
-  "שדה אליהו","שדרות","שוהם","שילה","שמשית","שפרעם","שריד",
-  // ת
-  "תל אביב-יפו","תל מונד","תל שבע","תפרח","תקוע",
-].sort((a, b) => a.localeCompare(b, "he"));
+  "אבו ביסאן","אבו ג'ווייד","אבו גוש","אבו סנאן","אבו קרינאת","אבו תלול","אבטין","אביגדור",
+  "אביחיל","אביטל","אביעזר","אבירים","אבל בית מעכה","אבן יהודה","אבן יצחק","אבן מנחם",
+  "אבנת","אבשלום","אגמון","אגמים","אגף","אדמות","אדרת","אוגדה",
+  "אודים","אום אל-פחם","אופקים","אור יהודה","אור עקיבא","אורה","אורות","אורים",
+  "אורנים","אורנית","אחוזה","אחוזם","אחוזת ברק","אחיהוד","אחיטוב","אחינועם",
+  "אחיסמך","אחיעזר","אחיקם","אחסמך","אטרוש","איבים","אייל","איל",
+  "אילון","אילות","אילניה","אילת","אילת השחר","איתן","אכזיב","אכסאל",
+  "אל עד","אל-ג'ש","אל-עזריה","אלומה","אלומות","אלון","אלון הגליל","אלוני אבא",
+  "אלוני הבשן","אלוני יצחק","אלונים","אלמגור","אלמוג","אלעד","אלפי מנשה","אלקוש",
+  "אם אל-פחם","אמונים","אמיר","אמירים","אמנון","אמציה","אמת","אניעם",
+  "אנקור","אסם","אפיק","אפיקים","אפרת","ארגמן","ארז","ארטנה",
+  "אריאל","ארנון","ארסוף","אשבול","אשדוד","אשדוד-יעקב","אשדות יעקב (איחוד)","אשדות יעקב (מאוחד)",
+  "אשוח","אשחר","אשל הנשיא","אשלים","אשקלון","באקה אל-גרביה","באר טוביה","באר שבע",
+  "בארות יצחק","בארות עציון","בארי","בד\"ה","בוסתן הגליל","בועינה-נוג'ידאת","בחן","ביר אלמכסור",
+  "בית אורן","בית אל","בית אלפא","בית אריה","בית ברל","בית ג'ן","בית גוברין","בית גמליאל",
+  "בית דגן","בית הגדי","בית הלוי","בית השיטה","בית חגי","בית חורון","בית חנן","בית חנניה",
+  "בית יתיר","בית לחם הגלילית","בית מאיר","בית ניר","בית עובד","בית עוזיאל","בית עריף","בית קשת",
+  "בית שמש","בית שערים","ביתן אהרן","ביתר עילית","בן זכאי","בני ברק","בני דרום","בני ציון",
+  "בני רא\"ם","בני ראם","בנימינה-גבעת עדה","בסמה","בסמת טבעון","בענה","בצרה","בקה אל-גרבייה",
+  "ברדלה","ברור חיל","ברוש","ברכה","בת הדר","בת ים","ג'דידה-מכר","ג'וליס",
+  "ג'לג'וליה","ג'ש","ג'שר אזרקא","ג'ת","גאולי תימן","גאולים","גבולות","גבועות בר",
+  "גבע","גבע כרמל","גבעון החדשה","גבעות בר","גבעותיים","גבעת ברנר","גבעת חיים (איחוד)","גבעת חיים (מאוחד)",
+  "גבעת עדה","גבעת שמואל","גבעתיים","גבת","גדות","גדיש","גדרה","גדרות",
+  "גונן","גורן","גזית","גזר","גיא אוני","גיאה","גיל עד","גילה",
+  "גינגר","גינוסר","גיתה","גיתרון","גל-עד","גלאון","גלב","גלעד",
+  "גמזו","גן הדרום","גן הים","גן השומרון","גן חיים","גן יאיר","גן יבנה","גן שורק",
+  "גן שלמה","גן שמואל","גנות","גנות הדר","גני הדר","גני טל","גני יוחנן","גני מודיעין",
+  "גני תקווה","גרופית","גשר","גשר הזיו","גת","דאלית אל-כרמל","דבורייה","דביר",
+  "דברת","דגן","דגניה א","דגניה ב","דוביב","דולב","דורות","דימונה",
+  "דיר אל-אסד","דיר חנא","דישון","דלתון","דן","דפנה","דקל","דרגות",
+  "האון","הבונים","הגושרים","הגיבורים","הדר גנים","הדר רמתיים","הוד השרון","הוד יעבץ",
+  "הושעיה","הזורע","הלל","המעפיל","הסוללים","הפגים","הר אדר","הר גילה",
+  "הרצליה","ורד יריחו","ורדון","זבדיאל","זבוד","זוהר","זיקים","זיתן",
+  "זכרון יעקב","זכריה","זמר","זנוח","זרועה","זרזיר","זרחיה","ח'ואלד",
+  "חבצלת השרון","חגלה","חד נס","חד-נס","חדרה","חולדה","חולון","חולית",
+  "חוסן","חורה","חורפיש","חיבת ציון","חיננית","חיפה","חכל","חלוצה",
+  "חלמיש","חלץ","חמד","חמדיה","חמרה","חניאל","חניתה","חנתון",
+  "חסין","חפץ חיים","חפצי-בה","חצב","חצבה","חצור הגלילית","חצור-אשדוד","חצרים",
+  "חרוצים","חריש","חשמונאים","טבריה","טובה זנגריה","טייבה","טירה","טירת כרמל",
+  "טירת צבי","טל-אל","טמרה","יאנוח-ג'ת","יבנה","יגבה","יד בנימין","יד מרדכי",
+  "יד נתן","יד רמב\"ם","יד רמבם","יהוד-מונוסון","יהל","יובל","יובלים","יודפת",
+  "יונתן","יוקנעם עילית","יורדת","יזרעאל","יחיעם","יטבתה","יכיני","ינוב",
+  "יסוד המעלה","יסודות","יפיע","יפית","יפעת","יצהר","יקום","יקנעם עילית",
+  "ירדנה","ירושה","ירושלים","ירחיב","ירכא","ישע","ישרש","יתיר",
+  "כאבול","כאוכב אבו אל-היג'א","כברי","כדיתה","כוכב יאיר-צור יגאל","כוכב יעקב","כורם","כיסופים",
+  "כלנית","כמאנה","כמהין","כנות","כנרת (מושבה)","כנרת (קיבוץ)","כסיפה","כסלון",
+  "כסרא-סמיע","כפר אביב","כפר אדומים","כפר אוריה","כפר אחים","כפר ביאליק","כפר בלום","כפר ברא",
+  "כפר ברוך","כפר גדעון","כפר גלים","כפר גלעדי","כפר גנים","כפר דניאל","כפר האורנים","כפר הגדוד",
+  "כפר הוורד","כפר המכבי","כפר הנגיד","כפר הנשיא","כפר הרוא\"ה","כפר הרי\"ף","כפר ויתקין","כפר ורבורג",
+  "כפר זיתים","כפר חב\"ד","כפר חיטים","כפר חיים","כפר חנניה","כפר חרוב","כפר טרומן","כפר יאסיף",
+  "כפר יהושע","כפר יובל","כפר יונה","כפר יחזקאל","כפר יסיף","כפר יעבץ","כפר ירק","כפר כמא",
+  "כפר כנא","כפר מנדא","כפר מנחם","כפר מסריק","כפר מצר","כפר מרדכי","כפר נהר הירדן","כפר נטר",
+  "כפר ניסים","כפר סבא","כפר סילבר","כפר עזה","כפר ענן","כפר עציון","כפר פינס","כפר קאסם",
+  "כפר קיש","כפר קישון","כפר קרא","כפר ראש הנקרה","כפר רופין","כפר רות","כפר שמאי","כפר שמריהו",
+  "כפר תבור","כרכור","כרם ביבנה","כרם שלום","כרמי צור","כרמי שומרון","כרמיאל","לבון",
+  "לביא","להב","להבות הבשן","להבים","לוד","לוחמי הגטאות","לוטן","לימן",
+  "לכיש","לפיד","לקיה","מאיר שפיה","מבוא ביתר","מבוא חורון","מבוא מודיעין","מבוא שילה",
+  "מבואות ים","מג'ד אל-כרום","מגאר","מגדל","מגדל העמק","מגדל עוז","מגדל שמס","מגדל תפן",
+  "מגידו","מגל","מגן","מגן שאול","מגנים","מדרשת בן גוריון","מדרשת רופין","מדרשת שדה בוקר",
+  "מודיעין מכבים רעות","מודיעין עילית","מולדת","מוצא עילית","מוקד","מזור","מזכרת בתיה","מזרע",
+  "מחילות","מחנה יתיר","מחניים","מחסיה","מחשבים","מטה יהודה","מטע","מי עמי",
+  "מיצר","מישר","מיתר","מכחול","מכמורת","מכמנים","מכרות","מלאה",
+  "מלכישוע","ממשית","מנוחה","מנוף","מנרה","מנשייה זבדה","מנת","מסד",
+  "מסעדה","מסרק","מע'אר","מעברות","מעגן","מעגן מיכאל","מעיין ברוך","מעיין צבי",
+  "מעיליא","מעלה אדומים","מעלה גלבוע","מעלה גמלא","מעלה ירחמיאל","מעלות-תרשיחא","מפלסים","מצדות יהודה",
+  "מצובה","מצליח","מצפה אבי\"ב","מצפה הרים","מצפה יריחו","מצפה נטופה","מצפה רמון","מצפה שלם",
+  "מרגליות","מרגניות","מרחביה (מושב)","מרחביה (קיבוץ)","מרכז שפירא","מרר","משגב עם","משואות יצחק",
+  "משמר איילון","משמר דוד","משמר הירדן","משמר הנגב","משמר העמק","משמר השרון","משמר יוסף","משמר שרון",
+  "משמרת","מתן","מתתיהו","נאות גולן","נאות מרדכי","נגבה","נהל עוז","נהלל",
+  "נהריה","נוב","נוה ים","נועם","נוף הגליל","נופים","נחל עוז","נחלה",
+  "נחליאל","נחלים","נחם","נחמיה","נחף","נחשולים","נחשון","נחשונים",
+  "נטועה","נטיב הגדוד","ניין","ניצנה","ניצנה קהילתית","ניצני עוז","ניר אליהו","ניר בנים",
+  "ניר גלים","ניר הלל","ניר חן","ניר יפה","ניר יצחק","ניר ישראל","ניר מרדכי","ניר עוז",
+  "ניר עם","ניר עקיבא","ניר צבי","נירה","נירים","נירית","נס הרים","נס ציונה",
+  "נען","נצר חזני","נצר סרני","נשר","נתיבות","נתניה","סאג'ור","סאסא",
+  "סח'נין","סלמה","סנסנה","סעד","ספינה","ספיר","עבדת","עבלין",
+  "עדי","עוזה","עוצם","עיבלין","עידן","עיינות","עילבון","עין איילה",
+  "עין אל-אסד","עין גב","עין גנים","עין דור","עין הבשור","עין הוד","עין המפרץ","עין הנצי\"ב",
+  "עין השופט","עין השלושה","עין ורד","עין זיוון","עין זיתים","עין חמד","עין חצבה","עין חרוד (איחוד)",
+  "עין חרוד (מאוחד)","עין יהב","עין יעקב","עין ירקה","עין כמונים","עין כרמל","עין מאהל","עין נקובא",
+  "עין עירון","עין ראפה","עין שמר","עין שמש","עין תמר","עכברה","עכו","עלמה",
+  "עמינדב","עמיר","עמנואל","ענאתא","ענב","ענתות","עפולה","עץ אפרים",
+  "עצמון","עצמון שגב","עראבה","עראמשה","ערד","ערוגות","עתלית","פארן",
+  "פדואל","פדויים","פוריה","פוריה כפר עבודה","פוריה נווה עובד","פחמיה","פלך","פלמחים",
+  "פסגות","פסוטה","פקיעין","פרדס חנה-כרכור","פרדסייה","פרוד","פרזון","פרחיה",
+  "פרי גן","פתח תקוה","פתחיה","צאלים","צאנין","צבעון","צורית","צחר",
+  "ציפורי","צלפון","צפר","צפרייה","צפת","צרופה","צרעה","קבוצת שילר",
+  "קדומים","קדימה-צורן","קדמת גליל","קדמת צבי","קדרון","קדרים","קדש ברנע","קהל",
+  "קורנית","קטורה","קיסריה","קלחים","קלנסווה","קמה","קצרין","קריית אונו",
+  "קריית אתא","קריית ביאליק","קריית גת","קריית ים","קריית מוצקין","קריית ענבים","קריית שמונה","קרן שלום",
+  "ראמה","ראמות","ראש הנקרה","ראש העין","ראש פינה","ראשון לציון","רביבים","רביד",
+  "רגבה","רהט","רוחמה","רות","רחובות","ריחאניה","ריחן","ריחניה",
+  "רכסים","רמות","רמות מנשה","רמות נפתלי","רמיה","רמלה","רמת גן","רמת דוד",
+  "רמת הכובש","רמת השרון","רמת יוחנן","רמת רחל","רעים","רעננה","שאר ישוב","שבות רחל",
+  "שבלי","שבלי-אום אלגנם","שגב שלום","שגב-שלום","שדה אליהו","שדה דוד","שדה ורבורג","שדה יואב",
+  "שדה יעקב","שדה משה","שדה נחום","שדה נחמיה","שדה ניצן","שדי תרומות","שדמות דבורה","שדרות",
+  "שובל","שוהם","שוקדה","שושנת העמקים","שחין","שחרות","שי\"ש","שיבולים",
+  "שיזף","שיטים","שילה","שכניה","שלווה","שלוחות","שמורה","שמיר",
+  "שמרת","שמשית","שניר","שעב","שער הגולן","שפר","שפרעם","שקד",
+  "שרונה","שריגים","שריד","שתולה","שתולים","תדהר","תובל","תומר",
+  "תורעאן","תימורים","תירוש","תל אביב-יפו","תל קציר","תל שבע","תלמי אלעזר","תלמי ביל'ו",
+  "תלמי יוסף","תלמי יחיאל","תמרת","תנובות","תקומה","תקוע","תראבין","תרום",
+].sort((a, b) => a.localeCompare(b, 'he'));
 
 // ---- קואורדינטות ערים (lat, lon) ----
 const CITY_COORDS = {
@@ -1233,22 +1273,171 @@ function OrdersPage({ orders }) {
 // ============================================================
 // PAGE: REGISTER PRINTER
 // ============================================================
+// ============================================================
+// EMAIL OTP VERIFICATION — helper hook
+// ============================================================
+function useOTPFlow() {
+  const [otpCode, setOtpCode]       = useState("");
+  const [countdown, setCountdown]   = useState(0);
+
+  const generate = () => {
+    const code = String(Math.floor(100000 + Math.random() * 900000));
+    setOtpCode(code);
+    return code;
+  };
+
+  const startCountdown = () => {
+    setCountdown(60);
+  };
+
+  useEffect(() => {
+    if (countdown <= 0) return;
+    const t = setTimeout(() => setCountdown(c => c - 1), 1000);
+    return () => clearTimeout(t);
+  }, [countdown]);
+
+  return { otpCode, generate, countdown, startCountdown };
+}
+
+// 6 individual digit boxes for OTP input
+function OTPInput({ value, onChange, error }) {
+  const inputs = useRef([]);
+  const digits = value.split("").concat(Array(6).fill("")).slice(0, 6);
+
+  const handleKey = (i, e) => {
+    if (e.key === "Backspace" && !digits[i] && i > 0) {
+      inputs.current[i - 1]?.focus();
+    }
+  };
+
+  const handleChange = (i, ch) => {
+    const d = ch.replace(/\D/g, "").slice(-1);
+    const next = [...digits];
+    next[i] = d;
+    const joined = next.join("").slice(0, 6);
+    onChange(joined);
+    if (d && i < 5) inputs.current[i + 1]?.focus();
+  };
+
+  const handlePaste = (e) => {
+    const pasted = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, 6);
+    if (pasted) { onChange(pasted); e.preventDefault(); }
+  };
+
+  return (
+    <div>
+      <div className="flex gap-2 justify-center my-4" dir="ltr">
+        {digits.map((d, i) => (
+          <input
+            key={i}
+            ref={el => inputs.current[i] = el}
+            type="text"
+            inputMode="numeric"
+            maxLength={1}
+            value={d}
+            onChange={e => handleChange(i, e.target.value)}
+            onKeyDown={e => handleKey(i, e)}
+            onPaste={handlePaste}
+            className={`w-12 h-14 text-center text-2xl font-bold rounded-xl border-2 focus:outline-none focus:ring-2 transition
+              ${error ? "border-red-400 bg-red-50" : d ? "border-indigo-500 bg-indigo-50 text-indigo-700" : "border-gray-300 bg-white text-gray-900"}
+              focus:ring-indigo-300`}
+          />
+        ))}
+      </div>
+      {error && <p className="text-red-500 text-sm text-center mt-1">{error}</p>}
+    </div>
+  );
+}
+
+// Step indicator component
+function StepBar({ step }) {
+  const steps = ["אימות מייל", "פרטים אישיים", "סיום"];
+  return (
+    <div className="flex items-center justify-center gap-0 mb-8">
+      {steps.map((label, i) => (
+        <div key={i} className="flex items-center">
+          <div className="flex flex-col items-center">
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all
+              ${i < step ? "bg-green-500 text-white" : i === step ? "bg-indigo-600 text-white ring-4 ring-indigo-100" : "bg-gray-200 text-gray-400"}`}>
+              {i < step ? "✓" : i + 1}
+            </div>
+            <span className={`text-xs mt-1 font-medium ${i === step ? "text-indigo-600" : "text-gray-400"}`}>{label}</span>
+          </div>
+          {i < steps.length - 1 && (
+            <div className={`w-16 h-0.5 mx-1 mb-5 transition-all ${i < step ? "bg-green-400" : "bg-gray-200"}`} />
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function RegisterPage({ setPage }) {
-  const [form, setForm] = useState({ name:"", city:"", tierId:"standard", printerInfo:{ brand:"", model:"" }, materials:[], bio:"" });
-  const [done, setDone] = useState(false);
+  // step: 0=email, 1=otp, 2=form, 3=done
+  const [step, setStep]         = useState(0);
+  const [email, setEmail]       = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [sending, setSending]   = useState(false);
+  const [otpInput, setOtpInput] = useState("");
+  const [otpError, setOtpError] = useState("");
+  // Demo: show the code in UI (in production, send via backend/EmailJS)
+  const [devCode, setDevCode]   = useState("");
 
+  const [form, setForm] = useState({
+    name:"", city:"", tierId:"standard",
+    printerInfo:{ brand:"", model:"" }, materials:[], bio:""
+  });
+
+  const { otpCode, generate, countdown, startCountdown } = useOTPFlow();
   const tier = TIERS[form.tierId];
-  const ready = form.name && form.city && form.printerInfo.brand && form.printerInfo.model;
+  const formReady = form.name && form.city && form.printerInfo.brand && form.printerInfo.model;
 
-  if (done) {
+  const validateEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+  // ---- SEND OTP ----
+  const sendOTP = async () => {
+    if (!validateEmail(email)) {
+      setEmailError("נא להכניס כתובת אימייל תקינה");
+      return;
+    }
+    setEmailError("");
+    setSending(true);
+    const code = generate();
+    setDevCode(code);
+
+    // ── PRODUCTION: כאן מתחבר EmailJS / backend ──
+    // await emailjs.send("SERVICE_ID", "TEMPLATE_ID", { to_email: email, otp_code: code }, "PUBLIC_KEY");
+    // ─────────────────────────────────────────────
+
+    // Simulate network delay
+    await new Promise(r => setTimeout(r, 1400));
+    setSending(false);
+    startCountdown();
+    setOtpInput("");
+    setOtpError("");
+    setStep(1);
+  };
+
+  // ---- VERIFY OTP ----
+  const verifyOTP = () => {
+    if (otpInput.length < 6) { setOtpError("נא להכניס את כל 6 הספרות"); return; }
+    if (otpInput !== otpCode) { setOtpError("הקוד שגוי — בדוק שוב או בקש קוד חדש"); setOtpInput(""); return; }
+    setOtpError("");
+    setStep(2);
+  };
+
+  // ---- DONE ----
+  if (step === 3) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center px-6">
-        <div className="bg-white rounded-2xl p-10 shadow-lg text-center max-w-sm w-full">
-          <div className="text-6xl mb-4">🎉</div>
-          <h2 className="text-2xl font-black mb-2">ברוך הבא!</h2>
-          <p className="text-gray-500 text-sm mb-6">הפרופיל שלך עלה לאוויר — כשמגיעה הזמנה תקבל התראה.</p>
-          <button onClick={() => setPage("marketplace")} className="bg-indigo-600 text-white px-6 py-2 rounded-xl font-bold hover:bg-indigo-700">
-            ראה את השוק
+      <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 flex items-center justify-center px-6">
+        <div className="bg-white rounded-3xl p-10 shadow-xl text-center max-w-sm w-full">
+          <div className="text-7xl mb-4 animate-bounce">🎉</div>
+          <h2 className="text-2xl font-black mb-2 text-gray-900">ברוך הבא ל-PrintShare!</h2>
+          <p className="text-gray-500 text-sm mb-2">האימייל <span className="font-semibold text-indigo-600">{email}</span> אומת בהצלחה.</p>
+          <p className="text-gray-400 text-xs mb-6">הפרופיל שלך עלה לאוויר — כשמגיעה הזמנה תקבל התראה.</p>
+          <button onClick={() => setPage("marketplace")}
+                  className="w-full bg-indigo-600 text-white py-3 rounded-xl font-bold hover:bg-indigo-700 transition">
+            🔍 ראה את השוק
           </button>
         </div>
       </div>
@@ -1256,93 +1445,181 @@ function RegisterPage({ setPage }) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-10 px-6">
-      <div className="max-w-xl mx-auto">
-        <h1 className="text-2xl font-black text-gray-900 mb-1">➕ רשום את המדפסת שלך</h1>
-        <p className="text-gray-500 text-sm mb-6">התחל לקבל הזמנות ולהרוויח — בלי עמלה ממך</p>
-        <div className="bg-white rounded-2xl p-6 shadow-sm space-y-5">
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="text-sm font-medium text-gray-700 block mb-1">שם מלא *</label>
-              <input className="w-full border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300"
-                     value={form.name} onChange={e => setForm({...form, name:e.target.value})} />
+    <div className="min-h-screen bg-gray-50 py-10 px-4">
+      <div className="max-w-lg mx-auto">
+        <div className="text-center mb-6">
+          <h1 className="text-2xl font-black text-gray-900">➕ רשום את המדפסת שלך</h1>
+          <p className="text-gray-500 text-sm mt-1">התחל לקבל הזמנות ולהרוויח — בלי עמלה ממך</p>
+        </div>
+
+        <StepBar step={step} />
+
+        {/* ── שלב 0: כתובת מייל ── */}
+        {step === 0 && (
+          <div className="bg-white rounded-2xl p-6 shadow-sm">
+            <div className="text-center mb-6">
+              <div className="text-4xl mb-2">📧</div>
+              <h2 className="text-lg font-bold text-gray-800">הכנס את כתובת האימייל שלך</h2>
+              <p className="text-gray-500 text-sm mt-1">נשלח לך קוד אימות בן 6 ספרות</p>
             </div>
-            <div>
-              <label className="text-sm font-medium text-gray-700 block mb-1">עיר מגורים *</label>
-              <CityAutocomplete value={form.city} onChange={v => setForm({...form, city:v})} />
+
+            <div className="space-y-4">
+              <div>
+                <label className="text-sm font-medium text-gray-700 block mb-1">אימייל *</label>
+                <input
+                  type="email"
+                  dir="ltr"
+                  placeholder="you@example.com"
+                  value={email}
+                  onChange={e => { setEmail(e.target.value); setEmailError(""); }}
+                  onKeyDown={e => e.key === "Enter" && sendOTP()}
+                  className={`w-full border-2 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 transition
+                    ${emailError ? "border-red-400 bg-red-50" : "border-gray-200 focus:border-indigo-400"}`}
+                />
+                {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
+              </div>
+
+              <button
+                onClick={sendOTP}
+                disabled={sending || !email}
+                className={`w-full py-3 rounded-xl text-white font-bold transition flex items-center justify-center gap-2
+                  ${sending || !email ? "bg-gray-300 cursor-not-allowed" : "bg-indigo-600 hover:bg-indigo-700"}`}>
+                {sending ? (
+                  <><span className="animate-spin inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full"></span> שולח קוד...</>
+                ) : "📨 שלח קוד אימות"}
+              </button>
             </div>
           </div>
+        )}
 
-          <div>
-            <label className="text-sm font-medium text-gray-700 block mb-2">רמת האיכות שלך *</label>
-            <div className="grid grid-cols-2 gap-2">
-              {Object.values(TIERS).map(t => (
-                <button key={t.id} onClick={() => setForm({...form, tierId:t.id, printerInfo:{brand:"",model:""}, materials:[]})}
-                        className={`p-3 rounded-xl border-2 text-right transition ${form.tierId===t.id ? `${t.borderColor} ${t.bgColor}` : "border-gray-200 hover:border-gray-300"}`}>
-                  <div className={`font-bold text-sm ${form.tierId===t.id ? t.textColor : "text-gray-700"}`}>{t.emoji} {t.name}</div>
-                  <div className="text-xs text-gray-400 mt-0.5">{t.layerHeight}</div>
+        {/* ── שלב 1: הכנסת קוד OTP ── */}
+        {step === 1 && (
+          <div className="bg-white rounded-2xl p-6 shadow-sm">
+            <div className="text-center mb-4">
+              <div className="text-4xl mb-2">🔐</div>
+              <h2 className="text-lg font-bold text-gray-800">הכנס את קוד האימות</h2>
+              <p className="text-gray-500 text-sm mt-1">
+                שלחנו קוד ל-<span className="font-semibold text-indigo-600" dir="ltr">{email}</span>
+              </p>
+            </div>
+
+            {/* ── DEMO NOTICE: מוצג רק בגרסת הפיתוח ── */}
+            {devCode && (
+              <div className="bg-amber-50 border-2 border-amber-300 rounded-xl p-3 mb-4 text-center">
+                <p className="text-xs text-amber-700 font-medium mb-1">⚠️ מצב פיתוח — הקוד לא נשלח למייל אמיתי</p>
+                <p className="text-2xl font-black text-amber-800 tracking-[0.3em]">{devCode}</p>
+                <p className="text-xs text-amber-600 mt-1">בגרסה הסופית הקוד יישלח לאימייל שלך</p>
+              </div>
+            )}
+
+            <OTPInput value={otpInput} onChange={setOtpInput} error={otpError} />
+
+            <button
+              onClick={verifyOTP}
+              disabled={otpInput.length < 6}
+              className={`w-full py-3 rounded-xl text-white font-bold transition mt-2
+                ${otpInput.length < 6 ? "bg-gray-300 cursor-not-allowed" : "bg-indigo-600 hover:bg-indigo-700"}`}>
+              ✅ אמת קוד
+            </button>
+
+            <div className="text-center mt-4">
+              {countdown > 0 ? (
+                <p className="text-sm text-gray-400">לא קיבלת קוד? שלח שוב בעוד <span className="font-bold text-indigo-600">{countdown}ש'</span></p>
+              ) : (
+                <button onClick={sendOTP} className="text-sm text-indigo-600 hover:underline font-medium">
+                  🔄 שלח קוד מחדש
                 </button>
-              ))}
+              )}
+              <button onClick={() => { setStep(0); setOtpInput(""); setOtpError(""); }}
+                      className="block mx-auto mt-2 text-xs text-gray-400 hover:text-gray-600">
+                ← שנה כתובת אימייל
+              </button>
             </div>
           </div>
+        )}
 
-          <div>
-            <label className="text-sm font-medium text-gray-700 block mb-2">יצרן ודגם מדפסת *</label>
-            <BrandModelSelect tierId={form.tierId} value={form.printerInfo}
-                              onChange={v => setForm({...form, printerInfo:v, materials:[]})} />
-          </div>
+        {/* ── שלב 2: פרטי הפרופיל ── */}
+        {step === 2 && (
+          <div className="bg-white rounded-2xl p-6 shadow-sm space-y-5">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full">✓ מייל אומת</span>
+              <span className="text-xs text-gray-400" dir="ltr">{email}</span>
+            </div>
 
-          {form.printerInfo.brand && (
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="text-sm font-medium text-gray-700 block mb-1">שם מלא *</label>
+                <input className="w-full border rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                       value={form.name} onChange={e => setForm({...form, name:e.target.value})} />
+              </div>
+              <div>
+                <label className="text-sm font-medium text-gray-700 block mb-1">עיר מגורים *</label>
+                <CityAutocomplete value={form.city} onChange={v => setForm({...form, city:v})} />
+              </div>
+            </div>
+
             <div>
-              <label className="text-sm font-medium text-gray-700 block mb-2">חומרים זמינים</label>
-              <div className="flex flex-wrap gap-2">
-                {(PRINTER_BRANDS[form.printerInfo.brand]?.[form.tierId] ? TIERS[form.tierId].bestFor : []).length === 0
-                  ? TIERS[form.tierId].bestFor.map(m => (
+              <label className="text-sm font-medium text-gray-700 block mb-2">רמת האיכות שלך *</label>
+              <div className="grid grid-cols-2 gap-2">
+                {Object.values(TIERS).map(t => (
+                  <button key={t.id} onClick={() => setForm({...form, tierId:t.id, printerInfo:{brand:"",model:""}, materials:[]})}
+                          className={`p-3 rounded-xl border-2 text-right transition ${form.tierId===t.id ? `${t.borderColor} ${t.bgColor}` : "border-gray-200 hover:border-gray-300"}`}>
+                    <div className={`font-bold text-sm ${form.tierId===t.id ? t.textColor : "text-gray-700"}`}>{t.emoji} {t.name}</div>
+                    <div className="text-xs text-gray-400 mt-0.5">{t.layerHeight}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <label className="text-sm font-medium text-gray-700 block mb-2">יצרן ודגם מדפסת *</label>
+              <BrandModelSelect tierId={form.tierId} value={form.printerInfo}
+                                onChange={v => setForm({...form, printerInfo:v, materials:[]})} />
+            </div>
+
+            {form.printerInfo.brand && (
+              <div>
+                <label className="text-sm font-medium text-gray-700 block mb-2">חומרים זמינים</label>
+                <div className="flex flex-wrap gap-2">
+                  {["PLA","PLA+","PETG","ABS","ASA","TPU","Nylon","PETG-CF","PA-CF","שרף סטנדרטי","שרף ABS-like","שרף גמיש"]
+                    .filter(m => {
+                      const tierMats = { economy:["PLA"], standard:["PLA+","PETG","TPU"], quality:["ABS","ASA","PETG-CF","Nylon","PA-CF"], premium:["שרף סטנדרטי","שרף ABS-like","שרף גמיש"] };
+                      return tierMats[form.tierId]?.includes(m);
+                    })
+                    .map(m => (
                       <button key={m} onClick={() => setForm(f => ({...f, materials: f.materials.includes(m) ? f.materials.filter(x=>x!==m) : [...f.materials, m]}))}
                               className={`px-3 py-1.5 rounded-full text-sm border-2 transition ${form.materials.includes(m) ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-300 text-gray-600 hover:border-indigo-400"}`}>
                         {m}
                       </button>
                     ))
-                  : null
-                }
-                {["PLA","PLA+","PETG","ABS","ASA","TPU","Nylon","PETG-CF","PA-CF","שרף סטנדרטי","שרף ABS-like","שרף גמיש"]
-                  .filter(m => {
-                    const tierMats = { economy:["PLA"], standard:["PLA+","PETG","TPU"], quality:["ABS","ASA","PETG-CF","Nylon","PA-CF"], premium:["שרף סטנדרטי","שרף ABS-like","שרף גמיש"] };
-                    return tierMats[form.tierId]?.includes(m);
-                  })
-                  .map(m => (
-                    <button key={m} onClick={() => setForm(f => ({...f, materials: f.materials.includes(m) ? f.materials.filter(x=>x!==m) : [...f.materials, m]}))}
-                            className={`px-3 py-1.5 rounded-full text-sm border-2 transition ${form.materials.includes(m) ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-300 text-gray-600 hover:border-indigo-400"}`}>
-                      {m}
-                    </button>
-                  ))
-                }
+                  }
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
-          <div>
-            <label className="text-sm font-medium text-gray-700 block mb-1">ביוגרפיה קצרה</label>
-            <textarea className="w-full border rounded-xl px-4 py-2.5 text-sm h-20 resize-none focus:outline-none focus:ring-2 focus:ring-indigo-300"
-                      placeholder="ספר על עצמך ועל ניסיון ההדפסה שלך..."
-                      value={form.bio} onChange={e => setForm({...form, bio:e.target.value})} />
+            <div>
+              <label className="text-sm font-medium text-gray-700 block mb-1">ביוגרפיה קצרה</label>
+              <textarea className="w-full border rounded-xl px-4 py-2.5 text-sm h-20 resize-none focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                        placeholder="ספר על עצמך ועל ניסיון ההדפסה שלך..."
+                        value={form.bio} onChange={e => setForm({...form, bio:e.target.value})} />
+            </div>
+
+            {form.printerInfo.brand && form.printerInfo.model && (
+              <div className={`rounded-xl p-4 border-2 text-sm ${tier.bgColor} ${tier.borderColor}`}>
+                <div className={`font-bold mb-1 ${tier.textColor}`}>💰 הרווח שלך — {form.printerInfo.brand} {form.printerInfo.model}</div>
+                <div className="text-gray-600">
+                  ₪{tier.materialRate}/גרם + ₪{tier.machineRate}/שעה — ללא ניכוי.<br />
+                  לדוגמה 100גרם × 5שעות = <span className="font-bold">₪{(100*tier.materialRate + 5*tier.machineRate).toFixed(0)}</span> לכיסך.
+                </div>
+              </div>
+            )}
+
+            <button onClick={() => formReady && setStep(3)}
+                    className={`w-full py-3 rounded-xl text-white font-bold transition ${formReady ? "bg-indigo-600 hover:bg-indigo-700" : "bg-gray-300 cursor-not-allowed"}`}>
+              ✅ רשום את המדפסת
+            </button>
           </div>
-
-          {form.printerInfo.brand && form.printerInfo.model && (
-            <div className={`rounded-xl p-4 border-2 text-sm ${tier.bgColor} ${tier.borderColor}`}>
-              <div className={`font-bold mb-1 ${tier.textColor}`}>💰 הרווח שלך — {form.printerInfo.brand} {form.printerInfo.model}</div>
-              <div className="text-gray-600">
-                ₪{tier.materialRate}/גרם + ₪{tier.machineRate}/שעה — ללא ניכוי.<br />
-                לדוגמה 100גרם × 5שעות = <span className="font-bold">₪{(100*tier.materialRate + 5*tier.machineRate).toFixed(0)}</span> לכיסך.
-              </div>
-            </div>
-          )}
-
-          <button onClick={() => ready && setDone(true)}
-                  className={`w-full py-3 rounded-xl text-white font-bold transition ${ready ? "bg-indigo-600 hover:bg-indigo-700" : "bg-gray-300 cursor-not-allowed"}`}>
-            ✅ רשום את המדפסת
-          </button>
-        </div>
+        )}
       </div>
     </div>
   );
